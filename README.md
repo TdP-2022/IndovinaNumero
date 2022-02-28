@@ -11,7 +11,7 @@ Una partita può terminare perché il numero é stato indovinato, oppure perché
 
 ## Estensioni possibili
 
-1. In qualsiasi momento, l'utente può decidere di abbandonare la partita (per eventualmente ricominciarne una nuova).
+1. In qualsiasi momento, l'utente può decidere di abbandonare la partita (ed eventualmente ricominciarne una nuova).
 
 1. Lo stato di avanzamento (numero di tentativi già fatti rispetto a quelli totali) viene indicato con una ProgressBar.
 
