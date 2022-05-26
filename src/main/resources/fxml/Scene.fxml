@@ -8,51 +8,44 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.IndovinaNumero.FXMLController">
+<BorderPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.Es_IndovinaNumero.FXMLController">
+   <top>
+      <Label text="Indovina il numero!" textFill="#1fd00b" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </top>
    <center>
-      <VBox BorderPane.alignment="CENTER">
+      <VBox spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox>
+            <Button fx:id="btnNuovaPartita" mnemonicParsing="false" onAction="#doNuovaPartita" text="Nuova Partita" />
+            <HBox fx:id="HBoxTentativo" disable="true">
                <children>
-                  <Button fx:id="btnNuovaPartita" mnemonicParsing="false" onAction="#doNuovaPartita" text="Nuova Partita">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Label text="Tentativi Rimasti">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </Label>
-                  <TextField fx:id="txtTentativi" disable="true" prefWidth="80.0">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </TextField>
+                  <TextField fx:id="txtTentativo" onAction="#doProva" promptText="inserisci il numero" />
+                  <Button fx:id="btnProva" mnemonicParsing="false" onAction="#doProva" text="Prova" />
                </children>
             </HBox>
-            <HBox fx:id="hboxTentativi" disable="true">
+            <HBox disable="true">
                <children>
-                  <TextField fx:id="txtTentativo">
+                  <Label text="Tentativi rimasti :">
                      <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                        <Insets right="4.0" top="4.0" />
                      </HBox.margin>
-                  </TextField>
-                  <Button fx:id="btnProva" mnemonicParsing="false" onAction="#doTentativo" text="Prova!">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </Button>
+                  </Label>
+                  <TextField fx:id="txtTentativiRimasti" promptText="-" />
                </children>
             </HBox>
          </children>
       </VBox>
    </center>
    <bottom>
-      <TextArea fx:id="txtRisultato" disable="true" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <TextArea fx:id="txtRisultato" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
+      </TextArea>
    </bottom>
-   <top>
-      <Label text="Indovina Numero!" BorderPane.alignment="CENTER" />
-   </top>
 </BorderPane>
